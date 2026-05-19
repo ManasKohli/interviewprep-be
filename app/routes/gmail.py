@@ -37,5 +37,19 @@ def get_emails(token: str):
                 sender = header["value"]
         
         snp = data.get("snippet", "")
-        results.append({"id": msg_id, "snippet": snp, "subject": subject, "sender": sender})
+        keywords = [
+        "interview",
+        "recruiter",
+        "assessment",
+        "screening",
+        "technical",
+        "coding challenge",
+        "software engineer",
+        "intern"
+        ]
+        email_text = f"{subject} {snp}".lower()
+        is_potential = any(keyword in email_text for keyword in keywords)
+        if is_potential:
+            results.append({"id": msg_id, "snippet": snp, "subject": subject, "sender": sender})
+            
     return {'emails': results}
