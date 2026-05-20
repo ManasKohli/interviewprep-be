@@ -48,4 +48,4 @@ def get_emails(token: str):
         if is_potential:
             results.append({"id": msg_id, "snippet": snp, "subject": subject, "sender": sender})
             
-    return {'emails': results}
+    return results

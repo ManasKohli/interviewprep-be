@@ -12,5 +12,6 @@ def google_login():
 
 @router.get("/callback")
 def google_callback(code: str):
-    return handle_google_callback(code)
+    data = handle_google_callback(code)
+    return {"access_token": data[0], "user_info": data[1]}
 

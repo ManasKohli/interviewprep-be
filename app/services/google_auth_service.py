@@ -40,7 +40,4 @@ def handle_google_callback(code: str):
               "https://www.googleapis.com/oauth2/v3/userinfo",
         headers={"Authorization": f"Bearer {access_token}"}
     ).json()
-    return {
-        "access_token": access_token,
-        "user_info": user_info
-    }
+    return (access_token, user_info)

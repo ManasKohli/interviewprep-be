@@ -6,4 +6,4 @@ router = APIRouter(prefix="/gmail")
 @router.get("/emails")
 def get_emails(token: str):
     results = fetch_emails(token)
-    return results
+    return {"emails": results}
