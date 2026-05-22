@@ -1,13 +1,14 @@
 from fastapi import APIRouter
-from app.services.ai_service import analyze_email_content
+from app.services.ai_service import analyze_email_content, generate_interview_prep
 
-router = APIRouter(prefix="/ai")
+router = APIRouter(prefix="/ai", tags=["AI"])
 
-@router.get("/analyze")
-def analyze_email():
-    #hardcoded email
-    subject = "tech email"
-    snp = "we would like to invite you to interview for a swe role at aws"
+#test endpoint
+@router.get("/test")
+def test_ai():
+    # hardcoded data
+    material = generate_interview_prep("Google", "Software Engineer I")
 
-    analysis = analyze_email_content(subject, snp)
-    return {"analysis": analysis}
+    return {
+        "material": material
+    }
