@@ -1,10 +1,8 @@
-import os
-from dotenv import load_dotenv
+from app.core.config import settings
 from openai import OpenAI
 import json
 
-load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=settings.OPENAI_API_KEY)
 
 def analyze_email_content(subject, snp):
 

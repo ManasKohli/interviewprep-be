@@ -1,12 +1,10 @@
 import requests
-import os
-from dotenv import load_dotenv
+from app.core.config import settings
 
-load_dotenv()
 
-CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
-CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
-REDIRECT_URI = os.getenv("REDIRECT_URI")
+CLIENT_ID = settings.GOOGLE_CLIENT_ID
+CLIENT_SECRET = settings.GOOGLE_CLIENT_SECRET
+REDIRECT_URI = settings.REDIRECT_URL
 
 def login_with_google():
     auth_url = (
