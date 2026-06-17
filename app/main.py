@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routes import auth, gmail, ai
+from app.api import auth, gmail, ai, user
 
 app = FastAPI()
 
@@ -8,6 +8,7 @@ app = FastAPI()
 app.include_router(auth.router)
 app.include_router(gmail.router)
 app.include_router(ai.router)
+app.include_router(user.router)
 
 #start endpoint
 @app.on_event("startup")

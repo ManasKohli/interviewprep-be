@@ -1,9 +1,9 @@
-from pydantic import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     DATABASE_URL: str
     OPENAI_API_KEY: str
-    REDIRECT_URL: str
+    REDIRECT_URI: str
     GOOGLE_CLIENT_ID: str
     GOOGLE_CLIENT_SECRET: str
 
