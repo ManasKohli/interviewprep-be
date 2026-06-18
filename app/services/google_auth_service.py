@@ -4,7 +4,7 @@ from app.core.config import settings
 
 CLIENT_ID = settings.GOOGLE_CLIENT_ID
 CLIENT_SECRET = settings.GOOGLE_CLIENT_SECRET
-REDIRECT_URI = settings.REDIRECT_URL
+REDIRECT_URI = settings.REDIRECT_URI
 
 def login_with_google():
     auth_url = (
